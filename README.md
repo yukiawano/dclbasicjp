@@ -4,11 +4,11 @@ Code Lab: Pirate Convention(Japanese)
 これは[Dart Code Lab: Pirate Convention](https://www.dartlang.org/codelabs/darrrt/)を京都GDGで翻訳したテキストです．
 Github上でオープンに翻訳は行なっておりますので，是非，Pull Requestを送っていただけますと大歓迎です！
 
-* Step0 完了済み
-* Step1
-* Step2
-* Step3
-* Step4
+* Step0 完了([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
+* Step1 割り当て済み([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
+* Step2 割り当て済み([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
+* Step3 割り当て済み([yukiawano](https://github.com/yukiawano))
+* Step4 
 * Step5
 * Step6
 * Step7
