@@ -1,37 +1,44 @@
 Step 0: Set up
-In this step, you download Dart and get the sample code.
+----------
 
-Get Dart.
-If you haven’t already done so, get the Dart download. Unzip the ZIP file, which creates a directory called dart.
+このステップでは Dart をダウンロードし、サンプルコードを取得します。
+
+### Dart を手に入れよう
+
+まだ手に入れてないのなら Dart をダウンロードしましょう。ZIPファイルを解答すると dart という名前のディレクトリが作られます。
 
 DOWNLOAD DART (64-BIT LINUX)
 DOWNLOAD DART (32-BIT LINUX)
-Current stable version of Dart: 1.1.1
-The Dart tools work in recent versions of   Windows (Vista, 7, or 8),   Linux, or   Mac.
 
-Start the editor.
-Go to the dart directory and double-click DartEditor.
+現在の安定版は Dart: 1.1.1 です。
 
-Got questions? Having trouble? Go to the Troubleshooting Dart Editor page.
+Dart tools は最近のバージョンの *Windows (Vista, 7, or 8)*, *Linux*, または *Mac* で動作します。
 
-Get the sample code.
-Download the sample code. Unzip the ZIP file, which creates a directory called one-hour-codelab-master.
+### エディタを起動しよう
 
-Open the one-hour-codelab-master sample.
-In Dart Editor, use File > Open Existing Folder… to open the one-hour-codelab-master directory.
+dart ディレクトリに移動し *DartEditor* をダブルクリックします。
 
-The files and directories in the piratebadge directory.
+*質問がある？トラブった？* それなら [ダートエディタのトラブルシューティングページ](https://www.dartlang.org/tools/editor/troubleshoot.html "Troubleshooting Dart Editor") を参照しましょう。
 
-Key Information
+### サンプルコードを手に入れよう
 
-The packages directory, as well as the pubspec.yaml and pubspec.lock files are related to package dependencies. This project has all the dependencies set up for you. Dart Editor automatically installs the necessary packages.
+サンプルコードを [ダウンロード](https://github.com/dart-lang/one-hour-codelab/archive/master.zip "Download") しましょう。IPファイルを解凍すると one-hour-codelab-master ディレクトリが作られます。
 
-Several numbered directories contain the completed code for each step. 1-blankbadge contains the skeletal version of the app that you begin with. 6-piratebadge_json contains the final version of the app.
+### サンプルの one-hour-codelab-master を開いてみよう
 
-The piratebadge.css file provides the CSS styles for all steps of the app. You don’t change this file during this code lab.
+ダートエディタで *File > Open Existing Folder…* の順にクリックし one-hour-codelab-master ディレクトリを開いてください。
 
-Dart SDK contains the source code for all of the functions, variables, and classes provided by the Dart Software Development Kit.
+The files and directories in the piratebadge directory.（注：画像の説明と思われるので翻訳せず）
 
-Installed Packages contains the source code for all of the functions, variables, and classes for the additional libraries that this application depends on.
+### キーインフォメーション
 
+packages ディレクトリ、それから pubspec.yaml and pubspec.lock ファイルはパッケージの依存関係に関連したファイルです。このプロジェクトではすべての依存関係が整っています。ダートエディタが自動的に必要なパッケージをインストールしてくれるのです。
+
+先頭に番号の付いたディレクトリにはそれぞれのステップの完全なコードが入っています。1-blankbadge にはあなたが最初に取り掛かることになるアプリの骨組みとなるバージョンが含まれています。6-piratebadge_json はアプリの最期のバージョンといった具合です。
+
+piratebadge.css ファイルはアプリのすべてのステップに共通する CSS スタイルを提供します。このコードラボ中にこのファイルを変更することはありません。
+
+*Dart SDK* ディレクトリには Dart ソフトウェア開発キットによって提供されるすべての関数、変数、そしてクラス群が含まれています。
+
+*Installed Packages* ディレクトリにはアプリが依存する追加ライブラリのすべての関数、変数、そしてクラス群が含まれています。
 
