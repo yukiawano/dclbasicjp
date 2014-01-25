@@ -8,7 +8,7 @@ Github上でオープンに翻訳は行なっておりますので，是非，Pu
 * Step1 完了([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
 * Step2 完了([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
 * Step3 完了([yukiawano](https://github.com/yukiawano))
-* Step4 
+* Step4 割り当て済み([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
 * Step5
 * Step6
 * Step7
