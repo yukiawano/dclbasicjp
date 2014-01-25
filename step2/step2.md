@@ -1,13 +1,13 @@
-Step 2: Add an input field
+Step 2: 入力欄を追加しよう
 -----
 
-> **Note**: Throughout this code lab, continue to edit the files in *1-blankbadge*. You can use the files in the other directories to compare to your code or to recover if you get off track.
+> **Note**: このコードラボでは引き続き *1-blankbadge* ファイルを編集していきます。自分のコードと比較するためやどうすべきか分からなくなってしまった時のために他のディレクトリを参照することもできます。
 
-In this step, you add an input field to the app. As the user types into the text field, the Dart code updates the badge from the value of the text field.
+このステップではアプリに入力欄を追加します。テキストフィールドに文字を入力するごとに Dart のコードが入力されたテキストでバッジを更新します。
 
-### Edit piratebadge.html.
+### piratebadge.html を編集しよう
 
-Add the <input> tag to the HTML code within the *widgets* <div>.
+\<div class="*widgets*"> \</div\> タグ内に \<input\> タグを追加しましょう。
 
 #### piratebadge.html
 
@@ -19,38 +19,38 @@ Add the <input> tag to the HTML code within the *widgets* <div>.
     </div>
     ...
 
-#### Key Information
+#### キーインフォメーション
 
-* The ID for the input element is *inputName*. Dart uses CSS selectors, such as *#inputName*, to get elements from the DOM.
+* input タグの id は *inputName* にすること。Dart は DOM から要素を取得する際に *#inputName* といった CSS セレクタを利用するからです。
 
-### Edit piratebadge.dart.
+### piratebadge.dart を編集しよう
 
-Import the *dart:html* library at the top of the file (below the copyright).
+ファイルのトップ（著作権表示の下）で *dart:html* ライブラリを import します。
 
 #### piratebadge.dart
     import 'dart:html';
 
-* This imports *all* classes and other resources from dart:html.
-* Don’t worry about bloated code. The build process performs tree-shaking to help minimize code.
-* The dart:html library contains the classes for all DOM element types, in addition to functions for accessing the DOM.
-* Later you’ll use import with the *show* keyword, which imports only the specified classes.
-* Dart Editor helpfully warns you that the import is unused. Don’t worry about it. You’ll fix it in the next step.
+* これは dart:html の *すべての* クラスその他のリソースを import します。
+* コードが肥大化するのを恐れないで。ビルドプロセスが tree-shaking (訳注：木を揺すって枝葉を振り落とす) してコードの最小化を助けます。
+* dart:html ライブラリは DOM にアクセスする関数群に加え、すべての DOM エレメントタイプのクラス群を含んでいます。
+* 後で *show* キーワードを使った import を利用することになりますが、こうすることで特定のクラスのみを import できます。
+* ダートエディタは親切なことに使用していない import には警告を出しますが心配しないで。次のステップで修正しますから。
 
-Register a function to handle input events on the input field.
+入力欄にイベントを処理する関数を登録します。
 
 #### piratebadge.dart
     void main() {
       querySelector('#inputName').onInput.listen(updateBadge);
     }
 
-* The *querySelector()* function, defined in dart:html, gets the specified element from the DOM. Here, the code uses the selector *#inputName* to specify the input field.
-* The object returned from *querySelector() is the DOM element object.
-* onInput registers an event handler for input events.
-* An input event occurs when the user presses a key.
-* You can use either single or double quotes to create a string.
-* Dart Editor warns you that the function doesn't exist. Let’s fix that now.
+* *querySelector()* 関数は dart:html に定義されており、DOM から特定の要素を取り出します。ここでは *#inputName* セレクタを使って input を特定しています。
+* *querySelector() 関数から返されるのはDOMエレメントオブジェクトです。
+* onInput は入力イベントに対するイベントハンドラを登録します。
+* 入力イベントはユーザーがキーを押すと発生します。
+* 文字列はシングルクォートでもダブルクォートでも大丈夫です。
+* ダートエディタが the function doesn't exist（そんな関数は存在しない）と警告を出すことでしょう。これからそれを修正していきます。
 
-Implement the event handler as a top-level function.
+イベントハンドラをトップレベル関数として実装します。
 
 #### piratebadge.dart
     ...
@@ -58,13 +58,13 @@ Implement the event handler as a top-level function.
       querySelector('#badgeName').text = e.target.value;
     }
 
-* This function sets the text of the *badgeName* element from the value of the input field.
-* *Event e* is the argument to the updateBadge function. The argument’s name is *e*; its type is *Event*.
-* You can tell that *updateBadge()* is an event handler because its parameter is an *Event* object.
-* The element that generated the event, the input field, is *e.target*.
-* Note the warning symbol next to this line of code in Dart Editor. *e.target* is typed as an *EventTarget* which does not have a *value* property.
+* この関数は入力欄の文字列を *badgeName* 要素のテキストとしてセットします。
+* *Event e* とは updateBadge 関数の引数です。仮引数の名前が *e* で、型が Event です。
+* パラメータが *Event* オブジェクトであることから *updateBadge()* がイベントハンドラだと言える訳です。
+* イベントが発生した要素（ここでは入力欄）を特定しているのが *e.target* の部分です。
+* ダートエディタでこの行のすぐ隣りに出ている警告にお気付きでしょうか。*e.target* は *EventTarget* 型であり *value* というプロパティは持たないと書いてあります。
 
-Fix the warning message.
+警告が出ないように修正してみましょう。
 
 #### piratebadge.dart
     ...
@@ -72,21 +72,21 @@ Fix the warning message.
       querySelector('#badgeName').text = (e.target as InputElement).value;
     }
 
-* In this example, *e.target* is the input element that generated the event.
-* The *as* keyword typecasts *e.target* to an *InputElement* to silence warnings from Dart Editor.
+* この例では *e.target* はイベントを発生させた input 要素です。
+* *as* キーワードは *e.target* を *InputElement* に型変換します。これでダートエディタの警告は静かになったでしょう。
 
-### Run the app
+### アプリを実行しよう
 
-Save your files with **File > Save All**.
-Use the Run button in Dart Editor to run the app.
-Compare your app to the one running below.
-Type in the input field.
+**File > Save All** と操作しファイルを保存してください。
+ダートエディタの Run ボタンを押してアプリを実行してください。
+下で動いているものとあなたのアプリを比較してください。
+入力欄に何か打ち込んでみてください。
 
 [Image]
 
-#### Problems?
+#### 何か問題が？
 
-Check your code against the files in *2-inputbadge*.
+自分のコードを *2-inputbadge* と比較してみよう。
 
 * [piratebadge.html](https://github.com/dart-lang/one-hour-codelab/blob/master/web/2-inputnamebadge/piratebadge.html)
 * [piratebadge.dart](https://github.com/dart-lang/one-hour-codelab/blob/master/web/2-inputnamebadge/piratebadge.dart)
