@@ -1,16 +1,16 @@
-Step 1: Run the skeleton app
+Step 1: スケルトンアプリを実行しよう
 ------
 
-In this step, you open the source files, familiarize yourself with the Dart and HTML code, and run the app.
+このステップではソースファイルを開き、Dart や HTML のコードに慣れていくことにしましょう。そしてアプリを実行してみましょう。
 
-### Expand the 1-blankbadge directory.
-In Dart Editor, expand the *1-blankbadge* directory by clicking the little arrow wee arrow to the left of its name. The directory contains two files, *piratebadge.html* and *piratebadge.dart*.
+### 1-blankbadge ディレクトリを広げてみよう
+ダートエディタでディレクトリ名の左にある小さな右三角ボタンをクリックして *1-blankbadge* ディレクトリを開いてください。ディレクトリには *piratebadge.html* と *piratebadge.dart* の2つのファイルが入っています。
 
-### Open the files.
-Open both files, *piratebadge.html* and *piratebadge.dart*, by double-clicking each filename in Dart Editor.
+### ファイルを開いてみよう
+ダートエディタで *piratebadge.html* と *piratebadge.dart* を両方ともダブルクリックして開いてみましよう。
 
-### Review the code.
-Get familiar with the HTML and the Dart code for the skeleton version of the app.
+### コードに目を通そう
+アプリのスケルトン（骨組み）をつくるために HTML と Dart のコードに体を馴染ませていきましょう。
 
 #### piratebadge.html
     <html>
@@ -39,13 +39,13 @@ Get familiar with the HTML and the Dart code for the skeleton version of the app
       </body>
     </html>
 
-#### Key Information
+#### キーインフォメーション
 
-* During this code lab, all the changes you make to *piratebadge.html* are within the <div> element identified with the class *widgets*.
-* In later steps, the <span> element with the ID *badgeName* is programmatically updated by the Dart code based on user input.
-* The first <script> tag identifies the main file that implements the app. Here, it’s the *piratebadge.dart* file.
-* The Dart Virtual Machine (Dart VM) runs Dart code natively. The Dart VM is built into Dartium, a special build of the Chromium browser in which you can run Dart apps natively.
-* The *packages/browser/dart.js* script checks for native Dart support and either bootstraps the Dart VM or loads compiled JavaScript instead.
+* このコードラボを通して *piratebadge.html* ファイルに加える変更は \<div class="*widgets*"\> \</div\> タグの間だけです。
+* 後のステップでは \<span id="*badgeName*"\> \</span\> タグの中身がフォーム入力の内容に応じて Dart コードを使ったプログラムで更新されるようになります。
+* 最初に出てくる \<script\> タグにはこのアプリの実装のメインとなるファイルが指定されています。それが *piratebadge.dart* ファイルです。
+* Dart 仮想マシン (Dart VM) は Dart のコードをネイティブに実行します。Dart VM は Dartium という特別にビルドされた Chromium ブラウザに組み込まれており、このブラウザでは Dart アプリがネイティブに動作します。
+* *packages/browser/dart.js* スクリプトはブラウザが Dart をネイティブサポートしているかチェックし、されていれば Dart VM を起動し、されていなければコンパイル済みの JavaScript を代わりにロードします。
 
 #### piratebadge.dart
 
@@ -53,18 +53,18 @@ Get familiar with the HTML and the Dart code for the skeleton version of the app
       // Your app starts here.
     }
 
-* This file contains the entry point for the app—the *main()* function. The <script> tags in the *piratebadge.html* file start the application by running this function.
-* The *main()* function is a top-level function.
-* A top-level variable or function is one that is declared outside a class definition.
+* このファイルはアプリのエントリポイントとなる *main()* 関数が含まれています。*piratebadge.html* ファイルの \<script\> タグはこのmain関数を呼び出すことでアプリをスタートさせます。
+* *main()* 関数はトップレベル関数です。
+* トップレベル変数、トップレベル関数とはクラス定義の外側に宣言されるものです。
 
-### Run the app.
+### アプリを実行しよう
 
-To run the app in Dart Editor, select *piratebadge.html* and click the Run button.
-
-[Image]
-
-Dart Editor launches *Dartium*, a special build of Chromium that has the Dart Virtual Machine built in, and loads the *piratebadge.html* file. The *piratebadge.html* file loads the app and calls the main() function.
+ダートエディタからアプリを実行するには *piratebadge.html* を選択して実行ボタンをクリックします。
 
 [Image]
 
-You should see a TO DO comment on the left and a red and white name badge on the right.
+ダートエディタは *Dartium* という Dart 仮想マシンが組み込まれた特別なビルドの Chromium を起動し、*piratebadge.html* ファイルをロードします。*piratebadge.html* ファイルはアプリをロードし main() 関数を呼び出します。
+
+[Image]
+
+きっと左手に TO DO コメントと、右手に赤と白のネームバッジが見えていることでしょう。
