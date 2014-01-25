@@ -1,11 +1,11 @@
-Step 3: Add a button
+Step 3: ボタンの追加
 -----
 
-In this step, you add a button to the app. The button is enabled when the text field contains no text. When the user clicks the button, the app puts the name *Anne Bonney* on the badge.
+このステップでは，アプリケーションにボタンを追加します．ボタンはテキストフィールドに文字が含まれていない時に有効化されます．ユーザーがボタンをクリックすると，アプリケーションはバッジに*Anne Bonney*の名前を表示します．
 
-### Edit piratebadge.html.
+### piratebadge.htmlの編集
 
-Add the <button> tag below the input field.
+<button>タグを入力フィールドの下に追加します．
 
 #### piratebadge.html
     ...
@@ -19,24 +19,26 @@ Add the <button> tag below the input field.
     </div>
     ...
 
-#### Key Information
+* 訳註: Aye! Gimme a name! (名前をください!)
 
-* The button has the ID *generateButton* so the Dart code can get the element.
+#### キーインフォメーション
 
-### Edit piragebadge.dart.
+* Dartのコードが要素にアクセスすることができるようにボタンは*generateButton*IDを持っています．
 
-Below the import, declare a top-level variable to hold the ButtonElement.
+### piragebadge.dartの編集
+
+import文の下で，ButtonElement(ボタン要素)を持つためのトップレベル変数を宣言します．
 
 #### piratebadge.dart
 
     import 'dart:html';
     ButtonElement genButton;
 
-#### Key Information
+#### キーインフォメーション
 
-* ButtonElement is one of many different kinds of DOM elements provided by the dart:html library.
+* ButtonElementはdart:htmlライブラリが提供する数多くの種類のDOM要素の中の一つです．
 
-Wire up the button with an event handler.
+ボタンにイベントハンドラを設定します．
 
 #### piratebadge.dart
 
@@ -46,11 +48,11 @@ Wire up the button with an event handler.
       genButton.onClick.listen(generateBadge);
     }
 
-#### Key Information
+#### キーインフォメーション
 
-* onClick registers a mouse click handler.
+* onClickはマウスクリックハンドラを登録します．
 
-Add a top-level function that changes the name on the badge.
+バッジの名前を変更するトップレベル関数を追加します．
 
 #### piratebadge.dart
     ...
@@ -58,11 +60,11 @@ Add a top-level function that changes the name on the badge.
       querySelector('#badgeName').text = newName;
     } 
 
-#### Key Information
+#### キーインフォメーション
 
-* The function updates the HTML page with a new name.
+* この関数は新しい名前でHTMLページを更新します．
 
-Implement the click handler for the button.
+ボタンのクリックハンドラを実装します．
 
 #### piratebadge.dart
     ...
@@ -70,10 +72,11 @@ Implement the click handler for the button.
       setBadgeName('Anne Bonney');
     }
 
-#### Key Information
-* This function sets the badge name to *Anne Bonney*.
+#### キーインフォメーション
 
-Modify *updateBadge()* to call *setBadgeName()*.
+* この関数はバッジの名前を*Anne Bonney*に設定します．
+
+*updateBadge()*を*setBadgeName()*を呼び出すように変更します．
 
 #### piratebadge.dart
     void updateBadge(Event e) {
@@ -81,27 +84,30 @@ Modify *updateBadge()* to call *setBadgeName()*.
       setBadgeName(inputName);
     }
 
-* Assign the input field’s value to a local string.
+#### キーインフォメーション
 
-Add a skeleton if-else statement to *updateBadge()*.
+* 入力フィールドの値をローカル変数(文字列)に割り当てます．
+
+*updateBadge()*にif-else文の骨組みを追加します．
 
 #### piratebadge.dart
     void updateBadge(Event e) {
       String inputName = (e.target as InputElement).value;
       setBadgeName(inputName);
       if (inputName.trim().isEmpty) {
-        // To do: add some code here.
+        // やること: ここにコードを追加
       } else {
-        // To do: add some code here.
+        // やること: ここにコードを追加
       }
     }
 
-#### Key Information
-* The *String* class has useful functions and properties for working with string data, such as *trim()* and *isEmpty*.
-* String comes from the *dart:core* library, which is automatically imported into every Dart program.
-* Dart has common programming language constructs like *if-else*.
+#### キーインフォメーション
 
-Now fill in the if-else statement to modify the button as needed.
+* *String*クラスは*trim()*や*isEmpty*など文字列データを取り扱うのに便利な関数やプロパティを持っています．
+* Stringは*dart:core*ライブラリに含まれます．*dart:core*ライブラリはすべてのDartプログラムで自動的にインポートされます．
+* Dartは*if-else*のような一般的なプログラミングの言語概念を持っています．
+
+必要に応じてボタンを変更するif-else文の残りを完成させます．
 
 #### piratebadge.dart
     void updateBadge(Event e) {
@@ -116,24 +122,31 @@ Now fill in the if-else statement to modify the button as needed.
       }
     }
 
-#### Key Information
-* The cascade operator (..) allows you to perform multiple operations on the members of a single object.
-* The *updateBadge()* code uses the cascade operator to set two properties on the button element. The result is the same as this more verbose code:
+#### キーインフォメーション
+
+* カスケードオペレーター(*..*)によって，単一のオブジェクトのメンバーに対して複数の操作を行うことができます．
+* *updateBadge()*コードはボタン要素の2つのプロパティを設定するのにカスケードオペレーターを利用しています．これは下の冗長なコードと同じ実行結果をもたらします．
 
     genButton.disabled = false;
     genButton.text = 'Aye! Gimme a name!';
 
-### Run the app.
+### アプリを実行しよう!
 
 Save your files with **File > Save All**.
 Use the Run button in Dart Editor to run the app.
 Compare your app to the one running below.
 Type in the input field. Remove the text from the input field. Click the button.
 
+**File > Save All**からファイルを保存してください．
+Dartエディタの実行ボタン(Run Button)を利用してアプリケーションを実行しましょう！
+自分のアプリケーションを下の実行中の画像と比較してください．
+入力フィr−づおに値を入力して，その後入力フィールドのテキストを削除してください．そして，ボタンをクリックしてください．
+
 [Image]
 
-#### Problems?
-Check your code against the files in *3-buttonbadge*.
+#### 問題がおきましたか?
+
+*3-buttonbadge*のコードと確認をしてください．
 
 * [piratebadge.html](https://github.com/dart-lang/one-hour-codelab/blob/master/web/3-buttonbadge/piratebadge.html)
 * [piratebadge.dart](https://github.com/dart-lang/one-hour-codelab/blob/master/web/3-buttonbadge/piratebadge.dart)
