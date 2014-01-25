@@ -5,9 +5,9 @@ Code Lab: Pirate Convention(Japanese)
 Github上でオープンに翻訳は行なっておりますので，是非，Pull Requestを送っていただけますと大歓迎です！
 
 * Step0 完了([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
-* Step1 割り当て済み([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
-* Step2 割り当て済み([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
-* Step3 割り当て済み([yukiawano](https://github.com/yukiawano))
+* Step1 完了([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
+* Step2 完了([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
+* Step3 完了([yukiawano](https://github.com/yukiawano))
 * Step4 
 * Step5
 * Step6
