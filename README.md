@@ -8,10 +8,11 @@ Github上でオープンに翻訳は行なっておりますので，是非，Pu
 * Step1 完了([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
 * Step2 完了([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
 * Step3 完了([yukiawano](https://github.com/yukiawano))
-* Step4 割り当て済み([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
-* Step5
-* Step6
+* Step4 完了([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
+* Step5 完了([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
+* Step6 完了([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
 * Step7
+* Step8
 
 コードラボ: 海賊のしきたり(Pirate Convention)
 ----------
@@ -28,3 +29,4 @@ Github上でオープンに翻訳は行なっておりますので，是非，Pu
 * [Step 5](step5/step5.md)
 * [Step 6](step6/step6.md)
 * [Step 7](step7/step7.md)
+* [Step 8](step8/step8.md)
