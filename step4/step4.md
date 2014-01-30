@@ -1,46 +1,46 @@
-Step 4: Create a PirateName class
+Step 4: PirateName クラスを作ろう
 -----
 
-In this step, you change only the Dart code. You create a class to represent a pirate name. When created, an instance of this class randomly selects a name and appellation from a list, or optionally you can provide a name and an appellation to the constructor.
+このステップでは Dart のコートだけを変更します。海賊の名前を表すクラスを作成し、作り終わったらこのクラスのインスタンスはリストから名前と称号をランダムに選び出します。また、オプションとしてコンストラクタに名前と称号を自分で渡すこともできます。
 
-### Edit piratebadge.dart.
+### piratebadge.dart を編集しよう
 
-Add an import to the top of the file.
+ファイルのトップに import 文を追加してください。
 
 #### piratebadge.dart
     import 'dart:html';
     import 'dart:math' show Random;
 
-#### Key Information
+#### キーインフォメーション
 
-* Using the *show* keyword, you can import only the classes, functions, or properties you need.
-* *Random* provides a random number generator.
+* *show* キーワードでクラス、関数、またはプロパティの中から必要なものだけを import できます。
+* *Random* クラスはランダムな数値を生成する機能を提供します。
 
-Add a class declaration to the bottom of the file.
+ファイルの一番下にクラス定義を追加してください。
 
 #### piratebadge.dart
     ...
     class PirateName {
     }
 
-#### Key Information
+#### キーインフォメーション
 
-* The class declaration provides the class name.
+* クラス定義はクラス名を提供します。
 
-Create a class-level Random object.
+Random オブジェクトをクラスレベルの（訳注：インスタンスごとではないクラスで共通の）オブジェクトとして作成します。
 
 #### piratebadge.dart
     class PirateName {
       static final Random indexGen = new Random();
     }
 
-#### Key Information
+#### キーインフォメーション
 
-* *static* defines a class-level field. That is, the random number generator is shared with all instances of this class.
-* Dart Editor italicizes static names.
-* Use *new* to call a constructor.
+* *static* キーワードはクラスレベルのフィールドを定義できます。つまり、ランダム数値生成器はこのクラスのすべてのインスタンス間で共用されます。
+* ダートエディタは static な変数名をイタリック体で表現します。
+* *new* キーワードでコンストラクタ呼び出しを行います。
 
-Add two instance variables to class, one for the first name and one for the appellation.
+2つのインスタンス変数を追加します。１つ目は名前を、2つ目は称号を表します。
 
 #### piratebadge.dart
     class PirateName {
@@ -49,11 +49,11 @@ Add two instance variables to class, one for the first name and one for the appe
       String _appellation;
     }
 
-#### Key Information
+#### キーインフォメーション
 
-* Private variables start with underscore (*_*). Dart has no *private* keyword.
+* プライベート変数はアンダースコア(*_*)で始まります。Dart に *private* キーワードはないのです。
 
-Create two static lists within the class that provide a small collection of names and appellations to choose from.
+名前と称号を提供する2つの小さなリストをクラス内に static に定義します。
 
 #### piratebadge.dart
     class PirateName {
@@ -66,13 +66,13 @@ Create two static lists within the class that provide a small collection of name
         'Young', 'Old', 'Angry', 'Brave', 'Crazy', 'Noble'];
     }
 
-#### Key Information
+#### キーインフォメーション
 
-* *final* variables cannot change.
-* Lists are built into the language. These lists are created using list literals.
-* The *List* class provides the API for lists.
+* *final* で宣言された変数は変更が出来ません。
+* リストは言語に組み込みで提供されています。これらのリストはリストリテラル（訳注：\[\]のこと）を使って作られています。
+* *List* クラスはリスト操作のAPIを提供します。
 
-Provide a constructor for the class.
+クラスにコンストラクタを追加しましょう。
 
 #### piratebadge.dart
     class PirateName {
@@ -91,16 +91,16 @@ Provide a constructor for the class.
       }
     }
 
-#### Key Information
+#### キーインフォメーション
 
-* Constructors have the same name as the class.
-* The parameters enclosed in curly brackets (*{* and *}*) are optional, named parameters.
-* The *nextInt()* function gets a new random integer from the random number generator.
-* Use square brackets (*[* and *]*) to index into a list.
-* The *length* property returns the number of items in a list.
-* The code uses a random number as an index into the list.
+* コンストラクタはクラスと同名です。
+* 中括弧 (*{* と *}*) で囲まれた引数はオプショナルな名前付き引数です。
+* *nextInt()* 関数はランダム数値生成器から新しいランダムな整数をひとつ取り出します。
+* カギ括弧 (*[* and *]*) は配列の添字として使います。
+* *length* プロパティはリストの要素数を返します。
+* このコードはランダムな数値をリストの添字として使用しているわけです。
 
-Provide a getter for the pirate name.
+海賊の名前のゲッターメソッドを追加しましょう。
 
 #### piratebadge.dart
 
@@ -110,25 +110,25 @@ class PirateName {
     _firstName.isEmpty ? '' : '$_firstName the $_appellation';
 }
 
-#### Key Information
+#### キーインフォメーション
 
-* Getters are special methods that provide read access to an object’s properties.
-* The ternary operator *?:* is short-hand for an if-then-else statement.
-* String interpolation (*'$_firstName the $_appellation'*) lets you easily build strings from other objects.
-* The fat arrow ( *=> expr;* ) syntax is a shorthand for *{ return expr; }*.
+* ゲッターとはオブジェクトのプロパティに読み込みアクセスを提供する特別なメソッドです。
+* 三項演算子 *?:* は if-then-else 文の簡略表記です。
+* 文字列補間 (*'$_firstName the $_appellation'*) を使うと他のオブジェクトから文字列を簡単に作成できます。
+* ファットアロー ( *=> expr;* ) 構文は *{ return expr; }* の簡略形です。
 
-Modify the function *setBadgeName()* to use a PirateName instead of a String:
+*setBadgeName()* 関数を String 型の代わりに PirateName 型を受け取るように修正しましょう。
 
 #### piratebadge.dart
     void setBadgeName(PirateName newName) {
       querySelector('#badgeName').text = newName.pirateName;
     }
 
-#### Key Information
+#### キーインフォメーション
 
-* This code calls the getter to get the PirateName as a string.
+* このコードは海賊名を String で取得するためにゲッターを呼んでいます。
 
-Change *updateBadge()* to generate a PirateName based on the input field value.
+*updateBadge()* input フィールドの値に応じて海賊名を生成するように修正しましょう。
 
 #### piratebadge.dart
     void updateBadge(Event e) {
@@ -138,31 +138,31 @@ Change *updateBadge()* to generate a PirateName based on the input field value.
       ...
     }
 
-#### Key Information
+#### キーインフォメーション
 
-* The call to the constructor provides a value for one optional named parameter.
+* このコンストラクタ呼び出しでは名前付きパラメータを1つ渡しています。
 
-Change *generateBadge()* to generate a PirateName instead of using *Anne Bonney*.
+海賊名を *Anne Bonney* 決め打ちにならないように *generateBadge()* を修正してみましょう。
 
 #### piratebadge.dart
     void generateBadge(Event e) {
       setBadgeName(new PirateName());
     }
 
-* In this case, the call to the constructor passes no parameters.
+* このケースではコンストラクタには何も引数を渡していません。
 
-###  Run the app.
+###  アプリを実行しよう
 
-Save your files with **File > Save All**.
-Use the Run button in Dart Editor to run the app.
-Compare your app to the one running below.
-Type in the input field. Remove the text from the input field. Click the button.
+ファイルを **File > Save All** で保存します。
+ダートエディタの Rub ボタンでアプリを実行します。
+下で動いているものを自分のアプリをくらべてみましょう。
+input フィールドに入力したり、今度は input を空にしてみたりしてボタンを押してみましょう。
 
 [Image]
 
-#### Problems?
+#### 困り事が？
 
-Check your code against the files in *4-classbadge*.
+自分のコードを *4-classbadge* と比べてみましょう。
 
 * [piratebadge.html](https://github.com/dart-lang/one-hour-codelab/blob/master/web/4-classbadge/piratebadge.html)
 * [piratebadge.dart](https://github.com/dart-lang/one-hour-codelab/blob/master/web/4-classbadge/piratebadge.dart)
