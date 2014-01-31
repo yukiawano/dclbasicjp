@@ -1,12 +1,12 @@
-Step 6: Read names from JSON-encoded file
+Step 6: JSON ファイルから名前を読み込もう
 -----
 
-In this step, you change the PirateName class to get the list of names and appellations from a JSON file. This gives you a chance to add more names and appellations to the program.
+このステップでは JSON ファイルから名前と称号を取得するように PirateName クラスを変更します。こうすることでアプリにもっと多くの名前や称号を追加できます。
 
-### Create piratenames.json.
+### piratenames.json を作成しよう
 
-Use **File > New File…** to create a JSON-encoded file named *piratenames.json* with the following content.
-Put the file in *1-blankbadge* alongside the Dart and HTML files you’ve been editing.
+**File > New File…** と操作して以下の内容で JSON ファイルを作成し *piratenames.json* という名前で保存してください。
+このファイルをいま編集している Dart や HTML ファイルと平行して *1-blankbadge* ディレクトリに置いておいてください。
 
 #### piratenames.json
     { "names": [ "Anne", "Bette", "Cate", "Dawn",
@@ -38,13 +38,13 @@ Put the file in *1-blankbadge* alongside the Dart and HTML files you’ve been e
                 "Ugly", "Vile", "Weak", "Xeric",
                 "Yellow", "Zesty"]}
 
-#### Key Information
+#### キーインフォメーション
 
-* The file contains a JSON-encoded map, which contains two lists of strings.
+* このファイルには JSON の連想配列が記述されており、2つのキーにそれぞれ文字列の配列が値として格納されています。（訳注：訳しづらかったのでやや意訳したが JSON の構造を見れば明らかだと思う）
 
-### Edit piratebadge.html.
+### piratebadge.html を編集しよう
 
-Disable the input field and the button.
+input フィールドとボタンを無効化します。
 
 #### piratebadge.html
     ...
@@ -56,13 +56,13 @@ Disable the input field and the button.
       </div>
     ...
 
-#### Key Information
+#### キーインフォメーション
 
-* The Dart code enables the text field and the button after the pirate names are successfully read from the JSON file.
+* JSON ファイルから海賊名を首尾よく取得できたら Dart のコードがテキストフィールドとボタンを有効化します。
 
-### Edit piratebadge.dart.
+### piratebadge.dart を編集しよう
 
-Add an import to the top of the file.
+ファイルの先頭に import を追加してください。
 
 #### piratebadge.dart
     import 'dart:html';
@@ -70,12 +70,12 @@ Add an import to the top of the file.
     import 'dart:convert' show JSON;
     import 'dart:async' show Future;
 
-#### Key Information
+#### キーインフォメーション
 
-* The *dart:async* library provides for asynchronous programming.
-* A *Future* provides a way to get a value in the future. (For JavaScript developers: Futures are similar to Promises.)
+* *dart:async* ライブラリは非同期プログラミング機能を提供します。
+* *Future* クラスは将来値を取得するための手法を提供します。(JavaScript開発者へ：Future は Promise と似ています。)
 
-Replace the names and appellations lists with these static, empty lists:
+名前と照合の一覧を static な空のリストで置き換えます。
 
 #### piratebadge.dart
     class PirateName {
@@ -85,13 +85,13 @@ Replace the names and appellations lists with these static, empty lists:
       ...
     }
 
-#### Key Information
+#### キーインフォメーション
 
-* **Be sure to remove *final* from these declarations.**
-* *[]* is equivalent to *new List()*.
-* A List is a generic type—a List can contain any kind of object. If you intend for a list to contain only strings, you can declare it as *List<String>*.
+* **宣言から *final* キーワードを取り除くのを忘れないで下さい。**
+* *[]* リテラルは *new List()* と等価です。
+* List 型はどんなオブジェクトでも格納できるリストですが、もし明示的に「文字列しか含めない」と意図した場合は *List<String>* のように宣言できます。（訳注：Javaでいう総称型）
 
-Add two static functions to the PirateName class:
+PirateName クラスに static 関数を2つ追加してください。
 
 #### piratebadge.dart
     class PirateName {
@@ -110,16 +110,16 @@ Add two static functions to the PirateName class:
       }
     }
 
-#### Key Information
+#### キーインフォメーション
 
-* *HttpRequest* is a utility for retrieving data from a URL.
-* *getString()* is a convenience method for doing a simple GET request that returns a string.
-* The code uses a *Future* to perform the GET asynchronously.
-* The callback function for *.then()* is called when the Future completes successfully.
-* When the Future completes successfully, the pirate names are read from the JSON file.
-* *readyThePirates* returns the Future so the main program has the opportunity to do something after the file is read.
+* *HttpRequest* は URL からデータを取得するためのユーティリティクラスです。
+* *getString()* はシンプルな GET リクエストを送って結果を文字列で返す便利なメソッドです。
+* このコードでは非同期な HTTP GET のために *Future* を利用します。
+* *.then()* 関数に渡すコールバック関数は Future が首尾よく完了した際に呼び出されます。
+* Future が完了すると海賊名が JSON ファイルから読み込まれます。
+* *readyThePirates* はファイルが読み込まれた後メインプログラムが何かする際の便宜のために Future を戻します。
 
-Add a top-level variable.
+トップレベルに変数を追加してください。
 
 #### piratebadge.dart
     SpanElement badgeNameElement;
@@ -128,11 +128,11 @@ Add a top-level variable.
       ...
     }
 
-#### Key Information
+#### キーインフォメーション
 
-* Stash the span element for repeated use instead of querying the DOM for it.
+* 何度も利用するのでその都度 DOM を読み込まなくていいように span 要素を変数につっこんでおきましょう。
 
-Make these changes to the *main()* function.
+*main()* 関数に以下の変更を加えてください。
 
 #### piratebadge.dart
     void main() {
@@ -145,11 +145,11 @@ Make these changes to the *main()* function.
       ...
     }
 
-#### Key Information
+#### キーインフォメーション
 
-* Stash the span element in the global variable. Also, stash the input element in a local variable.
+* span 要素をグローバル変数に、input フィールドをローカル変数に入れておきましょう。
 
-Then, add the code to get the names from the JSON file, handling both success and failure.
+それから、JSON ファイルから名前を取得するコードを追加し、成功パターンと失敗パターンの両方をハンドリングします。
 
 #### piratebadge.dart
     void main() {
@@ -168,35 +168,35 @@ Then, add the code to get the names from the JSON file, handling both success an
         });
     }
 
-#### Key Information
+#### キーインフォメーション
 
-* Call the *readyThePirates()* function, which returns a Future.
-* When the Future successfully completes, the *then()* callback function is called.
-* Using underscore (_) as a parameter name indicates that the parameter is ignored.
-* The callback function enables the UI and gets the stored name.
-* If the Future encounters an error the *catchError* callback function is called and the program displays an error message, leaving the UI disabled.
-* The callback functions for *then()* and *catchError* are defined inline.
+* *readyThePirates()* 関数を呼び出すと Future オブジェクトが返ってきます。
+* Future がエラーなく返ってきたら *then()* コールバック関数が呼ばれます。
+* パラメータにアンダースコア (_) を渡しているのはパラメータが無視されることを示唆しています。
+* コールバック関数が UI を有効化し、保存された名前を取得します。
+* Future が何らかのエラーに遭遇したら *catchError* コールバックが呼ばれ、UI は無効化されたままで画面にエラーメッセージを表示します。
+* *then()* や *catchError* といったコールバック関数はインライン定義されます。
 
 ### Run the app.
 
-Save your files with **File > Save All**.
-Use the Run button in Dart Editor to run the app.
-If you want to see what happens when the app can’t find the *.json* file, change the file name in the code and run the program again.
-Compare your app to the final version running below.
+ファイルを **File > Save All** で保存します。
+ダートエディタの Rub ボタンでアプリを実行します。
+もし *.json* ファイルが見つからなかった場合にどうなるか知りたければファイル名を変更してプログラムをもう一度実行してみましょう。
+下で動いている最終版のアプリと自分のアプリを比べてみましょう。
 
 [Image]
 
-#### Problems?
+#### 困り事が？
 
-Check your code against the files in *6-piratebadge_json*.
+自分のコードを *6-piratebadge_json* と比べてみましょう。
 
 * [piratebadge.html](https://github.com/dart-lang/one-hour-codelab/blob/master/web/6-piratebadge_json/piratebadge.html)
 * [piratebadge.dart](https://github.com/dart-lang/one-hour-codelab/blob/master/web/6-piratebadge_json/piratebadge.dart)
 
-### Share your pirate name.
-Congratulations! You finished the pirate badge code lab.
+### 海賊名をシェアしよう
+おめでとう！海賊バッジCode Labは完了です！
 
-Share your pirate name with the world.
+君の海賊名を世界にシェアしよう！
 
 [Tweet button]
 [Google+ button]
