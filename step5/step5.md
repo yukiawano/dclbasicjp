@@ -1,22 +1,22 @@
-Step 5: Save to local storage
+Step 5: ローカルストレージに保存しよう
 -----
 
-In this step, you give the app some persistence by saving the badge name to local storage each time it changes. When you restart the app, it initializes the badge from the saved name.
+このステップでは、違う名前を入力するごとに海賊バッジをローカルストレージに保存してアプリに永続性を持たせましょう。アプリを再起動すると保存した名前を使ってバッジが作り直されます。
 
-###  Edit piratebadge.dart.
+### piratebadge.dart を編集しよう
 
-Import the JSON converter from the *dart:convert* library.
+*dart:convert* ライブラリから JSON コンバータをインポートします。
 
 #### piratebadge.dart
     import 'dart:html';
     import 'dart:math' show Random;
     import 'dart:convert' show JSON;
 
-#### Key Information
+#### キーインフォメーション
 
-* *JSON* provides convenient access to the most common JSON use cases.
+* *JSON* ライブラリは JSON の一般的なユースケースにとても便利な機能を提供します。
 
-Add a named constructor to the PirateName class.
+PirateName クラスに名前付きコンストラクタを追加しましょう。
 
 #### piratebadge.dart
     class PirateName {
@@ -28,14 +28,14 @@ Add a named constructor to the PirateName class.
       }
     }
 
-#### Key Information
+#### キーインフォメーション
 
-* The constructor creates a new PirateName instance from a JSON-encoded string.
-* *PirateName.fromJson* is a named constructor.
-* *JSON.decode()* parses a JSON string and creates Dart objects from it.
-* The pirate name is decoded into a *Map* object.
+* このコンストラクタは JSON エンコードされた文字列から新しい PirateName インスタンスを生成します。
+* *PirateName.fromJson* が名前付きコンストラクタです。
+* *JSON.decode()* は JSON 文字列を解析して Dart オブジェクトを生成します。
+* 海賊名は *Map* オブジェクトにデコードされます。
 
-Add a getter to the PirateName class that encodes a pirate name in a JSON string.
+PirateName クラスに海賊名を JSON 文字列にエンコードするゲッターメソッドを追加しましょう。
 
 #### piratebadge.dart
     class PirateName {
@@ -43,11 +43,11 @@ Add a getter to the PirateName class that encodes a pirate name in a JSON string
       String get jsonString => '{ "f": "$_firstName", "a": "$_appellation" } ';
     }
 
-#### Key Information
+#### キーインフォメーション
 
-* The getter formats the JSON string using the map format.
+* ゲッターはマップフォーマットを使って JSON 文字列をフォーマットします。
 
-Declare a top-level string.
+String 型の変数 TREASURE_KEY をトップレベルに宣言しましょう。
 
 #### piratebadge.dart
     final String TREASURE_KEY = 'pirateName';
@@ -56,11 +56,11 @@ Declare a top-level string.
       ...
     }
 
-#### Key Information
+#### キーインフォメーション
 
-* You store key-value pairs in local storage. This string is the key. The value is the pirate name.
+* これからキー・値のペアをローカルストレージに保存します。この文字列がそのキーになります。値は海賊名です。
 
-Save the pirate name when the badge name changes.
+バッジの名前が変更されたときに海賊名を保存しましょう。
 
 #### piratebadge.dart
     void setBadgeName(PirateName newName) {
@@ -71,11 +71,11 @@ Save the pirate name when the badge name changes.
       window.localStorage[TREASURE_KEY] = newName.jsonString;
     }
 
-#### Key Information
+#### キーインフォメーション
 
-* Local storage is provided by the browser’s *Window*.
+* ローカルストレージはブラウザの *Window* オブジェクトから提供されます。
 
-Add a top-level function called *getBadgeNameFromStorage()*.
+トップレベル関数 *getBadgeNameFromStorage()* を追加しましょう。
 
 #### piratebadge.dart
     void setBadgeName(PirateName newName) {
@@ -90,11 +90,11 @@ Add a top-level function called *getBadgeNameFromStorage()*.
       }
     }
 
-#### Key Information
+#### キーインフォメーション
 
-* The function retrieves the pirate name from local storage and creates a PirateName object from it.
+* この関数はローカルストレージから海賊名を取得し PirateName オブジェクトを生成して返します。
 
-Call the function from the main() function.
+main() 関数からこの関数を呼んでください。
 
 #### piratebadge.dart
     void main() {
@@ -102,21 +102,21 @@ Call the function from the main() function.
       setBadgeName(getBadgeNameFromStorage());
     }
 
-#### Key Information
+#### キーインフォメーション
 
-* Initialize the badge name from local storage.
+* ローカルストレージのバッジ名を初期値として使います。
 
-### Run the app.
+### アプリを実行してみよう
 
-Save your files with **File > Save All**.
-Use the Run button in Dart Editor to run the app.
-Compare your app to the one running below.
-Click the button to put a name on the badge. Start the app again by duplicating this window.
+ファイルを **File > Save All** で保存します。
+ダートエディタの Rub ボタンでアプリを実行します。
+下で動いているものと自分のアプリをくらべてみましょう。
+ボタンをクリックしてバッジに名前を表示してみたりブラウザのウィンドウをもう一つ開いてこのアプリを再度起動してみたりしましょう。
 
 [Image]
 
-#### Problems?
-Check your code against the files in *5-localbadge*.
+#### 困り事が？
+自分のコードを *5-localbadge* と比べてみましょう。
 
 * [piratebadge.html](https://github.com/dart-lang/one-hour-codelab/blob/master/web/5-localbadge/piratebadge.html)
 * [piratebadge.dart](https://github.com/dart-lang/one-hour-codelab/blob/master/web/5-localbadge/piratebadge.dart)
