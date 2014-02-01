@@ -1,4 +1,21 @@
-Step 7: Go forth and learn more about Dart
+What next?
+-----
+
+Now that you’ve written your app, what do you do now? Here are some suggestions.
+
+### Deploy a server and your app
+
+If you are interested in server-side programming, you can learn to write a static file server and use it to deploy the pirate badge app to Heroku. Check out the [Weigh Anchor: Deploy a Server and App](https://www.dartlang.org/codelabs/deploy/) code lab.
+
+### Check out the samples.
+
+Run some Dart programs online and check out the source code on our [Samples page](https://www.dartlang.org/samples/).
+
+### Read the tutorials.
+
+Learn more about Dart from the [Dart tutorials](https://www.dartlang.org/docs/tutorials/).
+
+Summary and resources
 -----
 
 ### Think about what you’ve done!
