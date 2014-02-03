@@ -1,41 +1,41 @@
-Step 7: Build the app and run as JavaScript
+Step 7: アプリをビルドし JavaScript として動かそう
 ------
 
-In this step, you use *pub build* to generate the assets for the app and put them into a new directory named *build*. In addition to other tasks, the build process generates minified JavaScript that can be run by any modern browser.
+このステップでは *pub build* を使ってアプリのアセットを生成しそれらを *build* という新しいディレクトリに設置します。それらタスクに加え、ビルドプロセスは近代的などんなブラウザでも実行できる（しかも圧縮されて軽い） JavaScript ファイルを生成します。
 
-Note that the *one-hour-codelab* directory contains several directories, one for each step, all of which are considered part of the one-hour-codelab application. The build process builds the assets for each directory. Each directory can be individually deployed.
+*one-hour-codelab* にはいくつかのディレクトリが含まれていたことを思い出してください。それぞれのステップつきひとつづつ、それらすべてが one-hour-codelab アプリの一部です。ビルドプロセスはそれぞれのディレクトリごとにアセットをビルドします。いずれのディレクトリも個々にデプロイ可能です。
 
-### Check out pubspec.yaml
+### pubspec.yaml をよく見てみよう
 
-Double-click the pubspec.yaml file to open it. Click the Source tab at the bottom of the editing pane.
+pubspec.yaml ファイルをダブルクリックしファイルを開きます。編集ペインの下部にある Source タブをクリックします。
 
     name: avast_ye_pirates
     description: Write a Dart web app code lab
     dependencies:
       browser: any
 
-#### Key Information
+#### キーインフォメーション
 
-* A *pubspec.yaml* file in a directory identifies the directory and its contents as an application.
-* *pubspec.yaml* provides meta-data for the application, such as its name.
-* The *pubspec.yaml* file also lists the libraries on which the app depends. The *browser* library needed by this app is hosted on [pub.dartlang.org](https://pub.dartlang.org/) along with many others.
-* *any* selects the latest package that matches your SDK.
+* *pubspec.yaml* ディレクトリがあることで、そのディレクトリとコンテンツはアプリケーションであると認識されます。
+* *pubspec.yaml* がアプリのメタデータを提供します。たとえばアプリ名など。
+* *pubspec.yaml* はアプリが依存するライブラリをリストアップもしています。 このアプリで必要な *browser* ライブラリは、その他多くのライブラリと共に [pub.dartlang.org](https://pub.dartlang.org/) にホスティングされています。
+* *any* はお使いの SDK にマッチする最新のライブラリを選択します。
 
-### Look at the packages directory
+### packages ディレクトリを見てみよう
 
-In Dart Editor, expand the *packages* directory.
+ダートエディタで *packages* ディレクトリを展開してみてください。
 
 [image]
 
-####  Key Information
+#### キーインフォメーション
 
-* The *packages* directory contains the code for all of the dependencies listed in the *pubspec.yaml* file. These are installed automatically by Dart Editor.
-* The *browser* package contains the *dart.js* script that checks for native Dart support.
-* The packages must be included in the built application in order for the app to be successfully deployed.
+* *packages* ディレクトリには *pubspec.yaml* ファイルにリストアップされた依存関係のコードがすべて格納されています。これらはダートエディタによって自動的にインストールされます。
+* *browser* パッケージにはブラウザが Dart をネイティブサポートしているかどうかチェックする *dart.js* スクリプトが含まれています。
+* アプリをエラーなくデプロイするためにはビルド後のアプリケーションに packages が含まれていなければなりません。
 
-### Run pub build
+### pub build を実行しよう
 
-Select *pubspec.yaml* then select *Tools > Pub Build*, which builds everything under the *one-hour-codelab* directory. The output looks something like this:
+*pubspec.yaml* を選択し *Tools > Pub Build* と選択していくと *one-hour-codelab* ディレクトリの下にすべてがビルドされます。ビルドログの出力はこんな感じになるでしょう。
 
     --- Jan 21, 2014 12:41:48 PM Running pub build ... ---
     Building avast_ye_pirates.....
@@ -53,28 +53,28 @@ Select *pubspec.yaml* then select *Tools > Pub Build*, which builds everything u
     Took 0:00:02.028974 to compile avast_ye_pirates|web/6-piratebadge/piratebadge.dart.
     Built 45 files!
 
-#### Key Information
+#### キーインフォメーション
 
-* The *pub build* command creates a *build* directory that contains subdirectories for every step in the code lab.
-* The *build* directory contains everything needed to deploy the entire project (all six steps).
+* *pub build* コマンドは *build* ディレクトリを作成し、中には各ステップごとのサブディレクトリが入っています。
+* *build* ディレクトリにはこれまでの6つのステップのプロジェクトをデプロイするのに必要なものがすべて含まれています。
 
-### Look at the *build* directory
+### *build* ディレクトリを見てみよう
 
-Expand the *build* directory. Note that it contains a subdirectory for each step of the code lab. Expand the *6-piratebadge* directory.
+*build* ディレクトリを開いてみてください。CodeLab のそれぞれのステップのサブディレクトリが入っているのが見て取れるでしょう。*6-piratebadge* ディレクトリを開いて下さい。
 
 [image]
 
-#### Key Information
+#### キーインフォメーション
 
-* The *piratebadge.dart.js* file is a JavaScript file that has been minified. When deployed, this file runs in the browser.
-* The *packages* directory contains the package dependencies.
-* Note that the directory contains no *piratebadge.dart* file. It is not needed to deploy the app to JavaScript.
-* Each subdirectory of *build* contains all of the files needed for the app to be deployed separately.
+* *piratebadge.dart.js* が圧縮されて最適化された JavaScript ファイルです。デプロイ後はこのファイルがブラウザで実行されます。
+* *packages* ディレクトリにパッケージの依存ファイルが含まれています。
+* *piratebadge.dart* ファイルは含まれていないことに注目してください。このファイルはアプリをデプロイするのに必要ないのです。
+* *build* ディレクトリのどのサブディレクトリにも個々のアプリがそれぞれ別々にデプロイ出来るように必要なファイルが含まれています。
 
-### Run the app as JavaScript
+### アプリを JavaScript として実行しよう
 
-Open the app. Select *File > Open File…* in a browser such a Firefix or Safari and select the *one-hour-codelab/build/6-piratebadge/piratebadge.html* file.
+Firefox や Safari といったブラウザで *File > Open File…* から *one-hour-codelab/build/6-piratebadge/piratebadge.html* と選択してアプリを開きます。
 
-#### Key Information
+#### キーインフォメーション
 
-* The app runs on the local machine using the *file* protocol. To share your app with others, you need to deploy the app to a hosting service.
+* アプリはローカルマシンでは *file* プロトコルで動作します。他の人にも見てもらうにはアプリをホスティングサービスにデプロイする必要があります。
