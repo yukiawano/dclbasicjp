@@ -11,8 +11,8 @@ Github上でオープンに翻訳は行なっておりますので，是非，Pu
 * Step4 完了([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
 * Step5 完了([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
 * Step6 完了([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
-* Step7
-* Step8
+* Step7 完了([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
+* Step8 完了([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
 
 コードラボ: 海賊のしきたり(Pirate Convention)
 ----------
