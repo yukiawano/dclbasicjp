@@ -1,51 +1,51 @@
-What next?
+次のステップは？
 -----
 
-Now that you’ve written your app, what do you do now? Here are some suggestions.
+アプリは書き上げた。次はどうしよう？ ならいくつか提案があります。
 
-### Deploy a server and your app
+### サーバーもアプリもデプロイしよう
 
-If you are interested in server-side programming, you can learn to write a static file server and use it to deploy the pirate badge app to Heroku. Check out the [Weigh Anchor: Deploy a Server and App](https://www.dartlang.org/codelabs/deploy/) code lab.
+サーバサイドプログラミングに興味があったら、静的ファイルサーバを書きそれを使って Heroku に海賊バッジアプリをデプロイする方法を学ぶことができます。[Weigh Anchor: Deploy a Server and App](https://www.dartlang.org/codelabs/deploy/) をチェックしてみてください。
 
-### Check out the samples.
+### サンプルを調べてみよう
 
-Run some Dart programs online and check out the source code on our [Samples page](https://www.dartlang.org/samples/).
+我々のサイト [Samples page](https://www.dartlang.org/samples/) でオンラインで Dart プログラムを実行したり、ソースコードを探訪したりしてみてはいかが。
 
-### Read the tutorials.
+### チュートリアルを読んでみよう
 
-Learn more about Dart from the [Dart tutorials](https://www.dartlang.org/docs/tutorials/).
+[Dart tutorials](https://www.dartlang.org/docs/tutorials/) で Dart についてより深く学習しましょう。
 
-Summary and resources
+まとめと参考資料
 -----
 
-### Think about what you’ve done!
+### 君がやり終えたことについて考えてみてください！
 
-This code lab provided a tour of most Dart language features and many library features. Here’s where to go to learn more.
+この CodeLab では Dart の言語的側面や多くのライブラリの特性などについて非常に多くのことをぐるっと見て回ることができました。もっと多くのことを知るために参照すべき場所は以下です。
 
-#### The Dart language
+#### Dart 言語について
 
-[A Tour of the Dart Language](https://www.dartlang.org/docs/dart-up-and-running/contents/ch02.html) shows you how to use each major Dart feature, from variables and operators to classes and libraries. This code lab introduced the following Dart language features, all of which are covered in more detail in the language tour.
+[A Tour of the Dart Language](https://www.dartlang.org/docs/dart-up-and-running/contents/ch02.html) では Dart の主要な特性の使い方について学ぶことができるでしょう。それこそ変数、演算子、クラス、ライブラリに至るまで。この CodeLab では以下の Dart 言語仕様について紹介してきましたが、前述のサイトではこれらすべてをより深く探訪することができるでしょう。
 
-* string interpolation (*'$_firstName the $_appellation'*)
-* the cascade operator (*..*)
-* the fat arrow (*=>*) function syntax
-* the ternary operator (*?:*)
-* named constructors (*PirateName.fromJSON(...)*)
-* optional parameters
-* a class
-* getters
-* instance methods and fields
-* class level methods and fields
-* top-level variables and functions
-* typecasting with *as* (*(e.target as InputElement)*)
-* import, and import with *show* (*import 'dart:math' show Random;*)
-* generics
+* 文字列挿入 (*'$_firstName the $_appellation'*)
+* カスケードオペレータ (*..*)
+* ファとアロー (*=>*) 関数構文
+* 三項演算子 (*?:*)
+* 名前付きコンストラクタ (*PirateName.fromJSON(...)*)
+* オプション引数
+* クラス
+* ゲッターメソッド
+* インスタンスメソッドやフィールド
+* クラスメソッドやクラスフィールド
+* トップレベル変数や関数
+* *as* を使った型変換 (*(e.target as InputElement)*)
+* import や *show* (*import 'dart:math' show Random;*)
+* ジェネリック型
 
-#### The Dart libraries
+#### Dart ライブラリ
 
-[A Tour of the Dart Libraries](https://www.dartlang.org/docs/dart-up-and-running/contents/ch03.html) shows you how to use the major features in Dart’s libraries.
+[A Tour of the Dart Libraries](https://www.dartlang.org/docs/dart-up-and-running/contents/ch03.html) では Dart の主要なライブラリの使い方を学ぶことができるでしょう。
 
-#### API documentation for classes
+#### クラスの API ドキュメント
 
 [String](https://api.dartlang.org/dart_core/String.html), 
 [List](https://api.dartlang.org/dart_core/List.html),
@@ -57,7 +57,7 @@ This code lab provided a tour of most Dart language features and many library fe
 [HttpRequest](https://api.dartlang.org/dart_html/HttpRequest.html), 
 and [Future](https://api.dartlang.org/dart_async/Future.html)
 
-#### API documentation for libraries
+#### ライブラリの API ドキュメント
 
 [dart:core](https://api.dartlang.org/dart_core.html), 
 [dart:math](https://api.dartlang.org/dart_math.html), 
@@ -65,19 +65,19 @@ and [Future](https://api.dartlang.org/dart_async/Future.html)
 [dart:async](https://api.dartlang.org/dart_async.html), 
 and [dart:convert](https://api.dartlang.org/dart_convert.html)
 
-#### API documentation for JSON and local storage
+#### JSON やローカルストレージに関する API ドキュメント
 
 [LocalStorage](https://api.dartlang.org/dart_html/Window.html#localStorage), 
 and [JSON](https://api.dartlang.org/dart_convert.html#JSON)
 
-#### Check out the samples.
+#### サンプル探訪
 
-Run some Dart programs online and check out the source code on our [Samples page](https://www.dartlang.org/samples/).
+オンラインで Dart のプログラムを実行してソースコードをチェック： [Samples page](https://www.dartlang.org/samples/).
 
-#### Read the tutorials.
+#### チュートリアル
 
-Learn more about Dart from the [Dart tutorials](https://www.dartlang.org/docs/tutorials/).
+Dart についてもっと知るには： [Dart tutorials](https://www.dartlang.org/docs/tutorials/).
 
-#### Deploy this app to Heroku.
+#### アプリを Heroku にデプロイ
 
-Learn how to deploy this app to the internet using Heroku in [Code Lab: Deploy the Pirates](https://www.dartlang.org/codelabs/deploy/).
+Heroku を使ってこのアプリをインターネットに公開するには： [Code Lab: Deploy the Pirates](https://www.dartlang.org/codelabs/deploy/).
