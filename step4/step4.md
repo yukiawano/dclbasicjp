@@ -169,4 +169,4 @@ input フィールドに入力したり、今度は input を空にしてみた�
 * [piratebadge.html](https://github.com/dart-lang/one-hour-codelab/blob/master/web/4-classbadge/piratebadge.html)
 * [piratebadge.dart](https://github.com/dart-lang/one-hour-codelab/blob/master/web/4-classbadge/piratebadge.dart)
 
-
+[前のステップへ](../step3/step3.md) | [次のステップへ](../step5/step5.md)
