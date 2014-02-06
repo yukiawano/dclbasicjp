@@ -7,9 +7,9 @@ Step 0: Set up
 
 まだ手に入れてないのなら Dart をダウンロードしましょう。ZIPファイルを解凍すると*dart*という名前のディレクトリが作られます。
 
-* [ダウンロードページ](https://www.dartlang.org/tools/download.html)
+[ダウンロードページ](https://www.dartlang.org/tools/download.html)
 
-* Dart tools は最近のバージョンの *Windows (Vista, 7, or 8)*, *Linux*, または *Mac* で動作します。
+* Dart tools は最近のバージョンの *Windows (Vista, 7, or 8)*, *Linux*, または *Mac* で動作します．
 * 現在の安定版は*Dart: 1.1.1*です．
 * 訳註: Dartは常に開発されていて，新しいバージョンが登場しています．バージョンによってはSDKなどの互換性がなくなっており，このTutorialの内容が動かない可能性があります．その場合は，[原文](https://www.dartlang.org/codelabs/darrrt/)を確認していただきますようお願いいたします．また，是非，翻訳のPull Requestを送っていただけますと大変うれしいです:)
 
@@ -39,3 +39,5 @@ Step 0: Set up
 * *piratebadge.css*ファイルはアプリのすべてのステップに共通する*CSS*スタイルを提供します。このコードラボ中にこのファイルを変更することはありません。
 * *Dart SDK*ディレクトリには*Dart*ソフトウェア開発キットによって提供されるすべての関数、変数、そしてクラス群が含まれています。
 * *Installed Packages*ディレクトリにはアプリが依存する追加ライブラリのすべての関数、変数、そしてクラス群が含まれています。
+
+[次のステップへ](../step1/step1.md)
