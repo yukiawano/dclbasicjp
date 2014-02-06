@@ -82,7 +82,9 @@ Step 2: 入力欄を追加しよう
 下で動いているものとあなたのアプリを比較してください。
 入力欄に何か打ち込んでみてください。
 
-[Image]
+![Step2Complete](step2_completed.png?raw=true)
+
+* [実行可能な形式](https://www.dartlang.org/codelabs/darrrt/#i-classfa-fa-anchor-i-run-the-app-1)
 
 #### 何か問題が？
 
@@ -91,3 +93,4 @@ Step 2: 入力欄を追加しよう
 * [piratebadge.html](https://github.com/dart-lang/one-hour-codelab/blob/master/web/2-inputnamebadge/piratebadge.html)
 * [piratebadge.dart](https://github.com/dart-lang/one-hour-codelab/blob/master/web/2-inputnamebadge/piratebadge.dart)
 
+[前のステップへ](../step1/step1.md) | [次のステップへ](../step3/step3.md)
