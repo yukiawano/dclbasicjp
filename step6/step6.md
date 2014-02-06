@@ -184,7 +184,9 @@ PirateName クラスに static 関数を2つ追加してください。
 もし *.json* ファイルが見つからなかった場合にどうなるか知りたければファイル名を変更してプログラムをもう一度実行してみましょう。
 下で動いている最終版のアプリと自分のアプリを比べてみましょう。
 
-[Image]
+![Step6Complete](step6_completed.png?raw=true)
+
+* [実行可能な形式](https://www.dartlang.org/codelabs/darrrt/#i-classfa-fa-anchor-i-run-the-app-5)
 
 #### 困り事が？
 
@@ -195,9 +197,6 @@ PirateName クラスに static 関数を2つ追加してください。
 
 ### 海賊名をシェアしよう
 おめでとう！海賊バッジCode Labは完了です！
+君の海賊名をTwitterやGoogle+で世界にシェアしよう！
 
-君の海賊名を世界にシェアしよう！
-
-[Tweet button]
-[Google+ button]
-
+[前のステップへ](../step5/step5.md) | [次のステップへ](../step7/step7.md)
