@@ -25,7 +25,7 @@ pubspec.yaml ファイルをダブルクリックしファイルを開きます�
 
 ダートエディタで *packages* ディレクトリを展開してみてください。
 
-[image]
+![packagesfiles](packagesfiles.png?raw=true)
 
 #### キーインフォメーション
 
@@ -62,7 +62,9 @@ pubspec.yaml ファイルをダブルクリックしファイルを開きます�
 
 *build* ディレクトリを開いてみてください。CodeLab のそれぞれのステップのサブディレクトリが入っているのが見て取れるでしょう。*6-piratebadge* ディレクトリを開いて下さい。
 
-[image]
+![builddir](builddir.png?raw=true)
+
+* Files for deployment: 配置するべきファイル
 
 #### キーインフォメーション
 
@@ -78,3 +80,5 @@ Firefox や Safari といったブラウザで *File > Open File…* から *one
 #### キーインフォメーション
 
 * アプリはローカルマシンでは *file* プロトコルで動作します。他の人にも見てもらうにはアプリをホスティングサービスにデプロイする必要があります。
+
+[前のステップへ](../step6/step6.md) | [次のステップへ](../step8/step8.md)
