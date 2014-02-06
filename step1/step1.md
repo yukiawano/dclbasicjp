@@ -61,10 +61,14 @@ Step 1: スケルトンアプリを実行しよう
 
 ダートエディタからアプリを実行するには *piratebadge.html* を選択して実行ボタンをクリックします。
 
-[Image]
+![Run](clickrun2.png?raw=true)
 
 ダートエディタは *Dartium* という Dart 仮想マシンが組み込まれた特別なビルドの Chromium を起動し、*piratebadge.html* ファイルをロードします。*piratebadge.html* ファイルはアプリをロードし main() 関数を呼び出します。
 
-[Image]
+![Step1Complete](step1_completed.png?raw=true)
+
+* [実行可能な形式](https://www.dartlang.org/codelabs/darrrt/#i-classfa-fa-anchor-i-run-the-app)
 
 きっと左手に TO DO コメントと、右手に赤と白のネームバッジが見えていることでしょう。
+
+[前のステップへ](../step0/step0.md) | [次のステップへ](../step2/step2.md)
