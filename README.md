@@ -15,7 +15,7 @@
 * [Step 7](step7/step7.md)
 * [Step 8](step8/step8.md)
 
-## 謝辞
+### 謝辞
 
 これは[Dart Code Lab: Pirate Convention](https://www.dartlang.org/codelabs/darrrt/)を日本国内のGDGで翻訳したテキストです．
 翻訳に協力してくださった方々，また，このすばらしいDart Code Lab: Pirate Conventionを作成してくださったDart Teamの方に感謝いたします．
@@ -32,7 +32,7 @@
 * Step7 ([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
 * Step8 ([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
 
-## ライセンス
+### ライセンス
 
 [Dart Code Lab: Pirate Convention](https://www.dartlang.org/codelabs/darrrt/)のライセンスに従い，
 特別な記述がない限りページはCreative Commons Attribution 3.0 Licenseを採用し，また，コードはBSDライセンスを採用します．
