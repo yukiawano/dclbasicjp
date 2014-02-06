@@ -132,11 +132,6 @@ import文の下で，ButtonElement(ボタン要素)を持つためのトップ�
 
 ### アプリを実行しよう!
 
-Save your files with **File > Save All**.
-Use the Run button in Dart Editor to run the app.
-Compare your app to the one running below.
-Type in the input field. Remove the text from the input field. Click the button.
-
 **File > Save All**からファイルを保存してください．
 Dartエディタの実行ボタン(Run Button)を利用してアプリケーションを実行しましょう！
 自分のアプリケーションを下の実行中の画像と比較してください．
