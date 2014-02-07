@@ -113,7 +113,9 @@ main() 関数からこの関数を呼んでください。
 下で動いているものと自分のアプリをくらべてみましょう。
 ボタンをクリックしてバッジに名前を表示してみたりブラウザのウィンドウをもう一つ開いてこのアプリを再度起動してみたりしましょう。
 
-[Image]
+![Step5Complete](step5_completed.png?raw=true)
+
+* [実行可能な形式](https://www.dartlang.org/codelabs/darrrt/#i-classfa-fa-anchor-i-run-the-app-4)
 
 #### 困り事が？
 自分のコードを *5-localbadge* と比べてみましょう。
@@ -121,4 +123,4 @@ main() 関数からこの関数を呼んでください。
 * [piratebadge.html](https://github.com/dart-lang/one-hour-codelab/blob/master/web/5-localbadge/piratebadge.html)
 * [piratebadge.dart](https://github.com/dart-lang/one-hour-codelab/blob/master/web/5-localbadge/piratebadge.dart)
 
-
+[前のステップへ](../step4/step4.md) | [次のステップへ](../step6/step6.md)

@@ -158,7 +158,9 @@ class PirateName {
 下で動いているものを自分のアプリをくらべてみましょう。
 input フィールドに入力したり、今度は input を空にしてみたりしてボタンを押してみましょう。
 
-[Image]
+![Step4Complete](step4_completed.png?raw=true)
+
+* [実行可能な形式](https://www.dartlang.org/codelabs/darrrt/#i-classfa-fa-anchor-i-run-the-app-3)
 
 #### 困り事が？
 
@@ -167,4 +169,4 @@ input フィールドに入力したり、今度は input を空にしてみた�
 * [piratebadge.html](https://github.com/dart-lang/one-hour-codelab/blob/master/web/4-classbadge/piratebadge.html)
 * [piratebadge.dart](https://github.com/dart-lang/one-hour-codelab/blob/master/web/4-classbadge/piratebadge.dart)
 
-
+[前のステップへ](../step3/step3.md) | [次のステップへ](../step5/step5.md)

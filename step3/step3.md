@@ -132,17 +132,14 @@ import文の下で，ButtonElement(ボタン要素)を持つためのトップ�
 
 ### アプリを実行しよう!
 
-Save your files with **File > Save All**.
-Use the Run button in Dart Editor to run the app.
-Compare your app to the one running below.
-Type in the input field. Remove the text from the input field. Click the button.
-
 **File > Save All**からファイルを保存してください．
 Dartエディタの実行ボタン(Run Button)を利用してアプリケーションを実行しましょう！
 自分のアプリケーションを下の実行中の画像と比較してください．
-入力フィr−づおに値を入力して，その後入力フィールドのテキストを削除してください．そして，ボタンをクリックしてください．
+入力フィールドに値を入力して，その後入力フィールドのテキストを削除してください．そして，ボタンをクリックしてください．
 
-[Image]
+![Step3Complete](step3_completed.png?raw=true)
+
+* [実行可能な形式](https://www.dartlang.org/codelabs/darrrt/#i-classfa-fa-anchor-i-run-the-app-2)
 
 #### 問題がおきましたか?
 
@@ -150,3 +147,5 @@ Dartエディタの実行ボタン(Run Button)を利用してアプリケーシ�
 
 * [piratebadge.html](https://github.com/dart-lang/one-hour-codelab/blob/master/web/3-buttonbadge/piratebadge.html)
 * [piratebadge.dart](https://github.com/dart-lang/one-hour-codelab/blob/master/web/3-buttonbadge/piratebadge.dart)
+
+[前のステップへ](../step2/step2.md) | [次のステップへ](../step4/step4.md)

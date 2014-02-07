@@ -81,3 +81,5 @@ Dart についてもっと知るには： [Dart tutorials](https://www.dartlang.
 #### アプリを Heroku にデプロイ
 
 Heroku を使ってこのアプリをインターネットに公開するには： [Code Lab: Deploy the Pirates](https://www.dartlang.org/codelabs/deploy/).
+
+[前のステップへ](../step7/step7.md)
