@@ -103,12 +103,11 @@ Random オブジェクトをクラスレベルの（訳注：インスタンス�
 海賊の名前のゲッターメソッドを追加しましょう。
 
 #### piratebadge.dart
-
-class PirateName {
-  ...
-  String get pirateName =>
-    _firstName.isEmpty ? '' : '$_firstName the $_appellation';
-}
+    class PirateName {
+      ...
+      String get pirateName =>
+        _firstName.isEmpty ? '' : '$_firstName the $_appellation';
+    }
 
 #### キーインフォメーション
 
