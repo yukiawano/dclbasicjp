@@ -103,18 +103,17 @@ Random オブジェクトをクラスレベルの（訳注：インスタンス�
 海賊の名前のゲッターメソッドを追加しましょう。
 
 #### piratebadge.dart
-
-class PirateName {
-  ...
-  String get pirateName =>
-    _firstName.isEmpty ? '' : '$_firstName the $_appellation';
-}
+    class PirateName {
+      ...
+      String get pirateName =>
+        _firstName.isEmpty ? '' : '$_firstName the $_appellation';
+    }
 
 #### キーインフォメーション
 
 * ゲッターとはオブジェクトのプロパティに読み込みアクセスを提供する特別なメソッドです。
 * 三項演算子 *?:* は if-then-else 文の簡略表記です。
-* 文字列補間 (*'$_firstName the $_appellation'*) を使うと他のオブジェクトから文字列を簡単に作成できます。
+* 文字列補間 (*'$\_firstName the $\_appellation'*) を使うと他のオブジェクトから文字列を簡単に作成できます。
 * ファットアロー ( *=> expr;* ) 構文は *{ return expr; }* の簡略形です。
 
 *setBadgeName()* 関数を String 型の代わりに PirateName 型を受け取るように修正しましょう。
