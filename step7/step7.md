@@ -9,10 +9,12 @@ Step 7: アプリをビルドし JavaScript として動かそう
 
 pubspec.yaml ファイルをダブルクリックしファイルを開きます。編集ペインの下部にある Source タブをクリックします。
 
-    name: avast_ye_pirates
-    description: Write a Dart web app code lab
-    dependencies:
-      browser: any
+```yaml
+name: avast_ye_pirates
+description: Write a Dart web app code lab
+dependencies:
+  browser: any
+```
 
 #### キーインフォメーション
 

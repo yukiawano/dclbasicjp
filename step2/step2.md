@@ -11,13 +11,15 @@ Step 2: 入力欄を追加しよう
 
 #### piratebadge.html
 
-    ...
-    <div class="widgets">
-      <div>
-        <input type="text" id="inputName" maxlength="15">
-      </div>
-    </div>
-    ...
+```html
+...
+<div class="widgets">
+  <div>
+    <input type="text" id="inputName" maxlength="15">
+  </div>
+</div>
+...
+```
 
 #### キーインフォメーション
 
@@ -28,7 +30,10 @@ Step 2: 入力欄を追加しよう
 ファイルのトップ（著作権表示の下）で *dart:html* ライブラリを import します。
 
 #### piratebadge.dart
-    import 'dart:html';
+
+```dart
+import 'dart:html';
+```
 
 * これは dart:html の *すべての* クラスその他のリソースを import します。
 * コードが肥大化するのを恐れないで。ビルドプロセスが tree-shaking (訳注：木を揺すって枝葉を振り落とす) してコードの最小化を助けます。
@@ -39,12 +44,15 @@ Step 2: 入力欄を追加しよう
 入力欄にイベントを処理する関数を登録します。
 
 #### piratebadge.dart
-    void main() {
-      querySelector('#inputName').onInput.listen(updateBadge);
-    }
+
+```dart
+void main() {
+  querySelector('#inputName').onInput.listen(updateBadge);
+}
+```
 
 * *querySelector()* 関数は dart:html に定義されており、DOM から特定の要素を取り出します。ここでは *#inputName* セレクタを使って input を特定しています。
-* *querySelector() 関数から返されるのはDOMエレメントオブジェクトです。
+* *querySelector()* 関数から返されるのはDOMエレメントオブジェクトです。
 * onInput は入力イベントに対するイベントハンドラを登録します。
 * 入力イベントはユーザーがキーを押すと発生します。
 * 文字列はシングルクォートでもダブルクォートでも大丈夫です。
@@ -53,10 +61,13 @@ Step 2: 入力欄を追加しよう
 イベントハンドラをトップレベル関数として実装します。
 
 #### piratebadge.dart
-    ...
-    void updateBadge(Event e) { 
-      querySelector('#badgeName').text = e.target.value;
-    }
+
+```dart
+...
+void updateBadge(Event e) { 
+  querySelector('#badgeName').text = e.target.value;
+}
+```
 
 * この関数は入力欄の文字列を *badgeName* 要素のテキストとしてセットします。
 * *Event e* とは updateBadge 関数の引数です。仮引数の名前が *e* で、型が Event です。
@@ -67,10 +78,13 @@ Step 2: 入力欄を追加しよう
 警告が出ないように修正してみましょう。
 
 #### piratebadge.dart
-    ...
-    void updateBadge(Event e) { 
-      querySelector('#badgeName').text = (e.target as InputElement).value;
-    }
+
+```dart
+...
+void updateBadge(Event e) { 
+  querySelector('#badgeName').text = (e.target as InputElement).value;
+}
+```
 
 * この例では *e.target* はイベントを発生させた input 要素です。
 * *as* キーワードは *e.target* を *InputElement* に型変換します。これでダートエディタの警告は静かになったでしょう。

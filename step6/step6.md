@@ -9,34 +9,37 @@ Step 6: JSON ファイルから名前を読み込もう
 このファイルをいま編集している Dart や HTML ファイルと平行して *1-blankbadge* ディレクトリに置いておいてください。
 
 #### piratenames.json
-    { "names": [ "Anne", "Bette", "Cate", "Dawn",
-                "Elise", "Faye", "Ginger", "Harriot",
-                "Izzy", "Jane", "Kaye", "Liz",
-                "Maria", "Nell", "Olive", "Pat",
-                "Queenie", "Rae", "Sal", "Tam",
-                "Uma", "Violet", "Wilma", "Xana",
-                "Yvonne", "Zelda",
-                "Abe", "Billy", "Caleb", "Davie",
-                "Eb", "Frank", "Gabe", "House",
-                "Icarus", "Jack", "Kurt", "Larry",
-                "Mike", "Nolan", "Oliver", "Pat",
-                "Quib", "Roy", "Sal", "Tom",
-                "Ube", "Val", "Walt", "Xavier",
-                "Yvan", "Zeb"],
-      "appellations": [ "Awesome", "Black", "Captain", "Damned",
-                "Even", "Fighter", "Great", "Hearty",
-                "Irate", "Jackal", "King", "Lord",
-                "Mighty", "Noble", "Old", "Powerful",
-                "Quick", "Red", "Stalwart", "Tank",
-                "Ultimate", "Vicious", "Wily", "aXe",
-                "Young", "Zealot",
-                "Angry", "Brave", "Crazy", "Damned",
-                "Eager", "Fool", "Greedy", "Hated",
-                "Idiot", "Jinxed", "Kind", "Lame",
-                "Maimed", "Naked", "Old", "Pale",
-                "Queasy", "Rat", "Sandy", "Tired",
-                "Ugly", "Vile", "Weak", "Xeric",
-                "Yellow", "Zesty"]}
+
+```dart
+{ "names": [ "Anne", "Bette", "Cate", "Dawn",
+            "Elise", "Faye", "Ginger", "Harriot",
+            "Izzy", "Jane", "Kaye", "Liz",
+            "Maria", "Nell", "Olive", "Pat",
+            "Queenie", "Rae", "Sal", "Tam",
+            "Uma", "Violet", "Wilma", "Xana",
+            "Yvonne", "Zelda",
+            "Abe", "Billy", "Caleb", "Davie",
+            "Eb", "Frank", "Gabe", "House",
+            "Icarus", "Jack", "Kurt", "Larry",
+            "Mike", "Nolan", "Oliver", "Pat",
+            "Quib", "Roy", "Sal", "Tom",
+            "Ube", "Val", "Walt", "Xavier",
+            "Yvan", "Zeb"],
+  "appellations": [ "Awesome", "Black", "Captain", "Damned",
+            "Even", "Fighter", "Great", "Hearty",
+            "Irate", "Jackal", "King", "Lord",
+            "Mighty", "Noble", "Old", "Powerful",
+            "Quick", "Red", "Stalwart", "Tank",
+            "Ultimate", "Vicious", "Wily", "aXe",
+            "Young", "Zealot",
+            "Angry", "Brave", "Crazy", "Damned",
+            "Eager", "Fool", "Greedy", "Hated",
+            "Idiot", "Jinxed", "Kind", "Lame",
+            "Maimed", "Naked", "Old", "Pale",
+            "Queasy", "Rat", "Sandy", "Tired",
+            "Ugly", "Vile", "Weak", "Xeric",
+            "Yellow", "Zesty"]}
+```
 
 #### キーインフォメーション
 
@@ -47,14 +50,17 @@ Step 6: JSON ファイルから名前を読み込もう
 input フィールドとボタンを無効化します。
 
 #### piratebadge.html
-    ...
-      <div>
-        <input type="text" id="inputName" maxlength="15" disabled>
-      </div>
-      <div>
-        <button id="generateButton" disabled>Aye! Gimme a name!</button>
-      </div>
-    ...
+
+```html
+...
+  <div>
+    <input type="text" id="inputName" maxlength="15" disabled>
+  </div>
+  <div>
+    <button id="generateButton" disabled>Aye! Gimme a name!</button>
+  </div>
+...
+```
 
 #### キーインフォメーション
 
@@ -65,10 +71,13 @@ input フィールドとボタンを無効化します。
 ファイルの先頭に import を追加してください。
 
 #### piratebadge.dart
-    import 'dart:html';
-    import 'dart:math' show Random;
-    import 'dart:convert' show JSON;
-    import 'dart:async' show Future;
+
+```dart
+import 'dart:html';
+import 'dart:math' show Random;
+import 'dart:convert' show JSON;
+import 'dart:async' show Future;
+```
 
 #### キーインフォメーション
 
@@ -78,37 +87,43 @@ input フィールドとボタンを無効化します。
 名前と照合の一覧を static な空のリストで置き換えます。
 
 #### piratebadge.dart
-    class PirateName {
-      ...
-      static List<String> names = [];
-      static List<String> appellations = [];
-      ...
-    }
+
+```dart
+class PirateName {
+  ...
+  static List<String> names = [];
+  static List<String> appellations = [];
+  ...
+}
+```
 
 #### キーインフォメーション
 
 * **宣言から *final* キーワードを取り除くのを忘れないで下さい。**
 * *[]* リテラルは *new List()* と等価です。
-* List 型はどんなオブジェクトでも格納できるリストですが、もし明示的に「文字列しか含めない」と意図した場合は *List<String>* のように宣言できます。（訳注：Javaでいう総称型）
+* List 型はどんなオブジェクトでも格納できるリストですが、もし明示的に「文字列しか含めない」と意図した場合は *List\<String\>* のように宣言できます。（訳注：Javaでいう総称型）
 
 PirateName クラスに static 関数を2つ追加してください。
 
 #### piratebadge.dart
-    class PirateName {
-      ...
-    
-      static Future readyThePirates() {
-        var path = 'piratenames.json';
-        return HttpRequest.getString(path)
-            .then(_parsePirateNamesFromJSON);
-      }
-      
-      static _parsePirateNamesFromJSON(String jsonString) {
-        Map pirateNames = JSON.decode(jsonString);
-        names = pirateNames['names'];
-        appellations = pirateNames['appellations'];
-      }
-    }
+
+```dart
+class PirateName {
+  ...
+
+  static Future readyThePirates() {
+    var path = 'piratenames.json';
+    return HttpRequest.getString(path)
+        .then(_parsePirateNamesFromJSON);
+  }
+  
+  static _parsePirateNamesFromJSON(String jsonString) {
+    Map pirateNames = JSON.decode(jsonString);
+    names = pirateNames['names'];
+    appellations = pirateNames['appellations'];
+  }
+}
+```
 
 #### キーインフォメーション
 
@@ -122,11 +137,15 @@ PirateName クラスに static 関数を2つ追加してください。
 トップレベルに変数を追加してください。
 
 #### piratebadge.dart
-    SpanElement badgeNameElement;
-    
-    void main() {
-      ...
-    }
+
+```dart
+SpanElement badgeNameElement;
+
+void main() {
+  ...
+}
+```
+
 
 #### キーインフォメーション
 
@@ -135,15 +154,18 @@ PirateName クラスに static 関数を2つ追加してください。
 *main()* 関数に以下の変更を加えてください。
 
 #### piratebadge.dart
-    void main() {
-      InputElement inputField = querySelector('#inputName');
-      inputField.onInput.listen(updateBadge);
-      genButton = querySelector('#generateButton');
-      genButton.onClick.listen(generateBadge);
-      
-      badgeNameElement = querySelector('#badgeName');
-      ...
-    }
+
+```dart
+void main() {
+  InputElement inputField = querySelector('#inputName');
+  inputField.onInput.listen(updateBadge);
+  genButton = querySelector('#generateButton');
+  genButton.onClick.listen(generateBadge);
+  
+  badgeNameElement = querySelector('#badgeName');
+  ...
+}
+```
 
 #### キーインフォメーション
 
@@ -152,21 +174,24 @@ PirateName クラスに static 関数を2つ追加してください。
 それから、JSON ファイルから名前を取得するコードを追加し、成功パターンと失敗パターンの両方をハンドリングします。
 
 #### piratebadge.dart
-    void main() {
-      ...
-      
-      PirateName.readyThePirates()
-        .then((_) {
-          //on success
-          inputField.disabled = false; //enable
-          genButton.disabled = false;  //enable
-          setBadgeName(getBadgeNameFromStorage());
-        })
-        .catchError((arrr) {
-          print('Error initializing pirate names: $arrr');
-          badgeNameElement.text = 'Arrr! No names.';
-        });
-    }
+
+```dart
+void main() {
+  ...
+  
+  PirateName.readyThePirates()
+    .then((_) {
+      //on success
+      inputField.disabled = false; //enable
+      genButton.disabled = false;  //enable
+      setBadgeName(getBadgeNameFromStorage());
+    })
+    .catchError((arrr) {
+      print('Error initializing pirate names: $arrr');
+      badgeNameElement.text = 'Arrr! No names.';
+    });
+}
+```
 
 #### キーインフォメーション
 

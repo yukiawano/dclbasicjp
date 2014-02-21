@@ -8,8 +8,11 @@ Step 4: PirateName クラスを作ろう
 ファイルのトップに import 文を追加してください。
 
 #### piratebadge.dart
-    import 'dart:html';
-    import 'dart:math' show Random;
+
+```dart
+import 'dart:html';
+import 'dart:math' show Random;
+```
 
 #### キーインフォメーション
 
@@ -19,9 +22,12 @@ Step 4: PirateName クラスを作ろう
 ファイルの一番下にクラス定義を追加してください。
 
 #### piratebadge.dart
-    ...
-    class PirateName {
-    }
+
+```dart
+...
+class PirateName {
+}
+```
 
 #### キーインフォメーション
 
@@ -30,9 +36,12 @@ Step 4: PirateName クラスを作ろう
 Random オブジェクトをクラスレベルの（訳注：インスタンスごとではないクラスで共通の）オブジェクトとして作成します。
 
 #### piratebadge.dart
-    class PirateName {
-      static final Random indexGen = new Random();
-    }
+
+```dart
+class PirateName {
+  static final Random indexGen = new Random();
+}
+```
 
 #### キーインフォメーション
 
@@ -43,11 +52,14 @@ Random オブジェクトをクラスレベルの（訳注：インスタンス�
 2つのインスタンス変数を追加します。１つ目は名前を、2つ目は称号を表します。
 
 #### piratebadge.dart
-    class PirateName {
-      static final Random indexGen = new Random();
-      String _firstName;
-      String _appellation;
-    }
+
+```dart
+class PirateName {
+  static final Random indexGen = new Random();
+  String _firstName;
+  String _appellation;
+}
+```
 
 #### キーインフォメーション
 
@@ -56,15 +68,18 @@ Random オブジェクトをクラスレベルの（訳注：インスタンス�
 名前と称号を提供する2つの小さなリストをクラス内に static に定義します。
 
 #### piratebadge.dart
-    class PirateName {
-      ...
-      static final List names = [
-        'Anne', 'Mary', 'Jack', 'Morgan', 'Roger',
-        'Bill', 'Ragnar', 'Ed', 'John', 'Jane' ];
-      static final List appellations = [
-        'Black','Damned', 'Jackal', 'Red', 'Stalwart', 'Axe',
-        'Young', 'Old', 'Angry', 'Brave', 'Crazy', 'Noble'];
-    }
+
+```dart
+class PirateName {
+  ...
+  static final List names = [
+    'Anne', 'Mary', 'Jack', 'Morgan', 'Roger',
+    'Bill', 'Ragnar', 'Ed', 'John', 'Jane' ];
+  static final List appellations = [
+    'Black','Damned', 'Jackal', 'Red', 'Stalwart', 'Axe',
+    'Young', 'Old', 'Angry', 'Brave', 'Crazy', 'Noble'];
+}
+```
 
 #### キーインフォメーション
 
@@ -75,21 +90,24 @@ Random オブジェクトをクラスレベルの（訳注：インスタンス�
 クラスにコンストラクタを追加しましょう。
 
 #### piratebadge.dart
-    class PirateName {
-      ...
-      PirateName({String firstName, String appellation}) {
-        if (firstName == null) {
-          _firstName = names[indexGen.nextInt(names.length)];
-        } else {
-          _firstName = firstName;
-        }
-        if (appellation == null) {
-          _appellation = appellations[indexGen.nextInt(appellations.length)];
-        } else {
-          _appellation = appellation;
-        }
-      }
+
+```dart
+class PirateName {
+  ...
+  PirateName({String firstName, String appellation}) {
+    if (firstName == null) {
+      _firstName = names[indexGen.nextInt(names.length)];
+    } else {
+      _firstName = firstName;
     }
+    if (appellation == null) {
+      _appellation = appellations[indexGen.nextInt(appellations.length)];
+    } else {
+      _appellation = appellation;
+    }
+  }
+}
+```
 
 #### キーインフォメーション
 
@@ -103,11 +121,14 @@ Random オブジェクトをクラスレベルの（訳注：インスタンス�
 海賊の名前のゲッターメソッドを追加しましょう。
 
 #### piratebadge.dart
-    class PirateName {
-      ...
-      String get pirateName =>
-        _firstName.isEmpty ? '' : '$_firstName the $_appellation';
-    }
+
+```dart
+class PirateName {
+  ...
+  String get pirateName =>
+    _firstName.isEmpty ? '' : '$_firstName the $_appellation';
+}
+```
 
 #### キーインフォメーション
 
@@ -119,9 +140,12 @@ Random オブジェクトをクラスレベルの（訳注：インスタンス�
 *setBadgeName()* 関数を String 型の代わりに PirateName 型を受け取るように修正しましょう。
 
 #### piratebadge.dart
-    void setBadgeName(PirateName newName) {
-      querySelector('#badgeName').text = newName.pirateName;
-    }
+
+```dart
+void setBadgeName(PirateName newName) {
+  querySelector('#badgeName').text = newName.pirateName;
+}
+```
 
 #### キーインフォメーション
 
@@ -130,12 +154,15 @@ Random オブジェクトをクラスレベルの（訳注：インスタンス�
 *updateBadge()* input フィールドの値に応じて海賊名を生成するように修正しましょう。
 
 #### piratebadge.dart
-    void updateBadge(Event e) {
-      String inputName = (e.target as InputElement).value;
-      
-      setBadgeName(new PirateName(firstName: inputName));
-      ...
-    }
+
+```dart
+void updateBadge(Event e) {
+  String inputName = (e.target as InputElement).value;
+  
+  setBadgeName(new PirateName(firstName: inputName));
+  ...
+}
+```
 
 #### キーインフォメーション
 
@@ -144,9 +171,12 @@ Random オブジェクトをクラスレベルの（訳注：インスタンス�
 海賊名を *Anne Bonney* 決め打ちにならないように *generateBadge()* を修正してみましょう。
 
 #### piratebadge.dart
-    void generateBadge(Event e) {
-      setBadgeName(new PirateName());
-    }
+
+```dart
+void generateBadge(Event e) {
+  setBadgeName(new PirateName());
+}
+```
 
 * このケースではコンストラクタには何も引数を渡していません。
 
