@@ -18,19 +18,10 @@
 ### 謝辞
 
 これは[Dart Code Lab: Pirate Convention](https://www.dartlang.org/codelabs/darrrt/)を日本国内のGDGで翻訳したテキストです．
-翻訳に協力してくださった方々，また，このすばらしいDart Code Lab: Pirate Conventionを作成してくださったDart Teamの方に感謝いたします．
+翻訳に協力してくださった方々([Contributors](https://github.com/yukiawano/dclbasicjp/graphs/contributors))，
+また，このすばらしいDart Code Lab: Pirate Conventionを作成してくださったDart Teamの方々に感謝いたします．
 そして，今，Dart Code Lab: Pirate Conventionを読んでくださっている皆さんに改めまして感謝いたします．
 ありがとうございます．
-
-* Step0 ([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
-* Step1 ([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
-* Step2 ([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
-* Step3 ([yukiawano](https://github.com/yukiawano))
-* Step4 ([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
-* Step5 ([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
-* Step6 ([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
-* Step7 ([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
-* Step8 ([FumihikoSHIROYAMA](https://github.com/FumihikoSHIROYAMA))
 
 ### ライセンス
 
