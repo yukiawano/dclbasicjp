@@ -5,25 +5,28 @@ Step 3: ボタンの追加
 
 ### piratebadge.htmlの編集
 
-<button>タグを入力フィールドの下に追加します．
+\<button\>タグを入力フィールドの下に追加します．
 
 #### piratebadge.html
-    ...
-    <div class="widgets">
-      <div>
-        <input type="text" id="inputName" maxlength="15">
-      </div>
-      <div>
-        <button id="generateButton">Aye! Gimme a name!</button>
-      </div>
-    </div>
-    ...
+
+```html
+...
+<div class="widgets">
+  <div>
+    <input type="text" id="inputName" maxlength="15">
+  </div>
+  <div>
+    <button id="generateButton">Aye! Gimme a name!</button>
+  </div>
+</div>
+...
+```
 
 * 訳註: Aye! Gimme a name! (名前をください!)
 
 #### キーインフォメーション
 
-* Dartのコードが要素にアクセスすることができるようにボタンは*generateButton*IDを持っています．
+* Dartのコードが要素にアクセスすることができるようにボタンは *generateButton* id属性を持っています．
 
 ### piragebadge.dartの編集
 
@@ -31,8 +34,10 @@ import文の下で，ButtonElement(ボタン要素)を持つためのトップ�
 
 #### piratebadge.dart
 
-    import 'dart:html';
-    ButtonElement genButton;
+```dart
+import 'dart:html';
+ButtonElement genButton;
+```
 
 #### キーインフォメーション
 
@@ -42,11 +47,13 @@ import文の下で，ButtonElement(ボタン要素)を持つためのトップ�
 
 #### piratebadge.dart
 
-    void main() {
-      querySelector('#inputName').onInput.listen(updateBadge);
-      genButton = querySelector('#generateButton');
-      genButton.onClick.listen(generateBadge);
-    }
+```dart
+void main() {
+  querySelector('#inputName').onInput.listen(updateBadge);
+  genButton = querySelector('#generateButton');
+  genButton.onClick.listen(generateBadge);
+}
+```
 
 #### キーインフォメーション
 
@@ -55,10 +62,12 @@ import文の下で，ButtonElement(ボタン要素)を持つためのトップ�
 バッジの名前を変更するトップレベル関数を追加します．
 
 #### piratebadge.dart
-    ...
-    void setBadgeName(String newName) {
-      querySelector('#badgeName').text = newName;
-    } 
+
+```dart
+void setBadgeName(String newName) {
+  querySelector('#badgeName').text = newName;
+} 
+```
 
 #### キーインフォメーション
 
@@ -67,10 +76,13 @@ import文の下で，ButtonElement(ボタン要素)を持つためのトップ�
 ボタンのクリックハンドラを実装します．
 
 #### piratebadge.dart
-    ...
-    void generateBadge(Event e) {
-      setBadgeName('Anne Bonney');
-    }
+
+```dart
+...
+void generateBadge(Event e) {
+  setBadgeName('Anne Bonney');
+}
+```
 
 #### キーインフォメーション
 
@@ -79,10 +91,13 @@ import文の下で，ButtonElement(ボタン要素)を持つためのトップ�
 *updateBadge()*を*setBadgeName()*を呼び出すように変更します．
 
 #### piratebadge.dart
-    void updateBadge(Event e) {
-      String inputName = (e.target as InputElement).value;
-      setBadgeName(inputName);
-    }
+
+```dart
+void updateBadge(Event e) {
+  String inputName = (e.target as InputElement).value;
+  setBadgeName(inputName);
+}
+```
 
 #### キーインフォメーション
 
@@ -91,15 +106,18 @@ import文の下で，ButtonElement(ボタン要素)を持つためのトップ�
 *updateBadge()*にif-else文の骨組みを追加します．
 
 #### piratebadge.dart
-    void updateBadge(Event e) {
-      String inputName = (e.target as InputElement).value;
-      setBadgeName(inputName);
-      if (inputName.trim().isEmpty) {
-        // やること: ここにコードを追加
-      } else {
-        // やること: ここにコードを追加
-      }
-    }
+
+```dart
+void updateBadge(Event e) {
+  String inputName = (e.target as InputElement).value;
+  setBadgeName(inputName);
+  if (inputName.trim().isEmpty) {
+    // TODO: ここにコードを追加
+  } else {
+    // TODO: ここにコードを追加
+  }
+}
+```
 
 #### キーインフォメーション
 
@@ -110,25 +128,30 @@ import文の下で，ButtonElement(ボタン要素)を持つためのトップ�
 必要に応じてボタンを変更するif-else文の残りを完成させます．
 
 #### piratebadge.dart
-    void updateBadge(Event e) {
-      String inputName = (e.target as InputElement).value;
-      setBadgeName(inputName);
-      if (inputName.trim().isEmpty) {
-        genButton..disabled = false
-                 ..text = 'Aye! Gimme a name!';
-      } else {
-        genButton..disabled = true
-                 ..text = 'Arrr! Write yer name!';
-      }
-    }
+
+```dart
+void updateBadge(Event e) {
+  String inputName = (e.target as InputElement).value;
+  setBadgeName(inputName);
+  if (inputName.trim().isEmpty) {
+    genButton..disabled = false
+             ..text = 'Aye! Gimme a name!';
+  } else {
+    genButton..disabled = true
+             ..text = 'Arrr! Write yer name!';
+  }
+}
+```
 
 #### キーインフォメーション
 
 * カスケードオペレーター(*..*)によって，単一のオブジェクトのメンバーに対して複数の操作を行うことができます．
 * *updateBadge()*コードはボタン要素の2つのプロパティを設定するのにカスケードオペレーターを利用しています．これは下の冗長なコードと同じ実行結果をもたらします．
 
-    genButton.disabled = false;
-    genButton.text = 'Aye! Gimme a name!';
+```dart
+genButton.disabled = false;
+genButton.text = 'Aye! Gimme a name!';
+```
 
 ### アプリを実行しよう!
 

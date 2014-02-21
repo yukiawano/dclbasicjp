@@ -13,31 +13,34 @@ Step 1: スケルトンアプリを実行しよう
 アプリのスケルトン（骨組み）をつくるために HTML と Dart のコードに体を馴染ませていきましょう。
 
 #### piratebadge.html
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <title>Pirate badge</title>
-        <link rel="stylesheet" href="../piratebadge.css">
-      </head>
-      <body>
-        <h1>Pirate badge</h1>
-        
-        <div class="widgets">
-          TO DO: Put the UI widgets here.
-        </div>
-        <div class="badge">
-          <div class="greeting">
-            Arrr! Me name is
-          </div>
-          <div class="name">
-            <span id="badgeName"> </span>
-          </div>
-        </div>
+
+```html
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pirate badge</title>
+    <link rel="stylesheet" href="../piratebadge.css">
+  </head>
+  <body>
+    <h1>Pirate badge</h1>
     
-        <script type="application/dart" src="piratebadge.dart"></script>
-        <script src="packages/browser/dart.js"></script>
-      </body>
-    </html>
+    <div class="widgets">
+      TO DO: Put the UI widgets here.
+    </div>
+    <div class="badge">
+      <div class="greeting">
+        Arrr! Me name is
+      </div>
+      <div class="name">
+        <span id="badgeName"> </span>
+      </div>
+    </div>
+
+    <script type="application/dart" src="piratebadge.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>
+```
 
 #### キーインフォメーション
 
@@ -49,9 +52,11 @@ Step 1: スケルトンアプリを実行しよう
 
 #### piratebadge.dart
 
-    void main() {
-      // Your app starts here.
-    }
+```dart
+void main() {
+  // Your app starts here.
+}
+```
 
 * このファイルはアプリのエントリポイントとなる *main()* 関数が含まれています。*piratebadge.html* ファイルの \<script\> タグはこのmain関数を呼び出すことでアプリをスタートさせます。
 * *main()* 関数はトップレベル関数です。
